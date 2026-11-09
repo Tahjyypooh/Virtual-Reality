@@ -13,7 +13,13 @@ window.addEventListener("DOMContentLoaded",function() {
     createTree(x,0,z);
   }
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
-
+for(let i = 0; i < 100; i++){
+    let x = rnd(-20,20);
+    let z = rnd(-20,20);
+    let y = rnd(10,20);
+    createCloud(x,y,z);
+    
+}
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
 })
 
@@ -25,6 +31,38 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set cloud entities position to those passed in to the function.
       6) Add the cloud entity to the scene
 */
+    function createCloud(x,y,z){
+      console.log(2)
+      
+      let cloud = document.createElement("a-entity");
+
+      let fluff = document.createElement("a-sphere");
+      fluff.setAttribute("color", "white");
+      fluff.setAttribute("position", "1.25","5 0");
+      fluff.setAttribute("height", "1");
+      fluff.setAttribute("radius", "1.5");
+      cloud.append(fluff);
+
+      let pillow = document.createElement("a-sphere");
+      pillow.setAttribute("color", "white");
+      pillow.setAttribute("position", "1.25","5 0");
+      pillow.setAttribute("height", "1");
+      pillow.setAttribute("radius", "1.5");
+      cloud.append(pillow);
+
+      let cotton = document.createElement("a-sphere");
+      cotton.setAttribute("color", "white");
+      cotton.setAttribute("position", "1.25","5 0");
+      cotton.setAttribute("height", "1");
+      cotton.setAttribute("radius", "1.5");
+      cloud.append(cotton);
+    
+      cloud.setAttribute("position",{x:x, y:y, z:z});
+    scene.append( cloud )
+
+    }
+
+
 
 /* Task 3: Create a function createHouse that,
       1) Accept an x and z position for where to place the house "entity"
@@ -35,6 +73,12 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set house entities position to those passed in to the function.
       6) Add the house entity to the scene
 */
+
+
+
+
+
+
 function createTree(x, y, z){
   let tree = document.createElement("a-entity");
   
